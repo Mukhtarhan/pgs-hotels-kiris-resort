@@ -4,15 +4,23 @@
         <h3>{{ title }}</h3>
         <span>{{ content }}</span>
     </div>
-    <img :src="img" :alt="title" width="456" height="340">
+    <img 
+        :src="img" 
+        :alt="title" 
+        width="456" 
+        height="340">
 </div>
-    <div class="card-service" v-else>
-        <img :src="img" :alt="title" width="456" height="340">
-        <div class="crad-serviece-content">
-            <h3>{{ title }}</h3>
-            <span>{{ content }}</span>
-        </div>
-    </div>   
+<div class="card-service" v-else>
+    <img 
+    :src="img" 
+    :alt="title" 
+    width="456" 
+    height="340">
+    <div class="crad-serviece-content">
+        <h3>{{ title }}</h3>
+        <span>{{ content }}</span>
+    </div>
+</div>   
 </template>
 
 <script setup>
@@ -35,7 +43,6 @@ const props = defineProps({
         default: 'left'
     }
 })
-
 
 </script>
 
