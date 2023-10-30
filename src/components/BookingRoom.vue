@@ -1,11 +1,11 @@
 <template>
   <form class="booking">
     <div class="booking-body">
-      <span class="booking-price">{{ booking.price }}  ₽</span>
+      <span class="booking-price">{{ booking.price }} ₽</span>
       <br /><br />
 
       <label>Даты въезда и выезда</label>
-      <input type="date" class="booking-date booking-input-1"/>
+      <input type="date" class="booking-date booking-input-1" />
 
       <label>Отдыхающие</label>
       <select class="booking-input-1 booking-select">
@@ -15,18 +15,14 @@
         <option value="4">4 взрослых</option>
       </select>
       <div class="booking-room">
-        <select 
-        class="booking-input-2"
-        v-model="booking.numChild">
+        <select class="booking-input-2" v-model="booking.numChild">
           <option value="0">без детей</option>
           <option value="1">1 детей</option>
           <option value="2">2 детей</option>
           <option value="3">3 детей</option>
           <option value="4">4 детей</option>
         </select>
-        <select 
-        class="booking-input-2"
-        v-model="booking.numRooms">
+        <select class="booking-input-2" v-model="booking.numRooms">
           <option value="1">1 номер</option>
           <option value="2">2 номер</option>
         </select>
@@ -42,18 +38,18 @@
 import { ref } from "vue";
 
 const booking = ref(
-        {
-            price: 0,
-            numAdult: 0,
-            numChild: 0,
-            startDate: '',
-            endDate: '',
-            numRooms: 0
-        }
+  {
+    price: 0,
+    numAdult: 0,
+    numChild: 0,
+    startDate: '',
+    endDate: '',
+    numRooms: 0
+  }
 )
 
 const addBooking = () => {
-    booking.value.price = ((booking.value.numAdult * 1290) + (booking.value.numChild * 892)) 
+  booking.value.price = ((booking.value.numAdult * 1290) + (booking.value.numChild * 892))
 }
 
 
@@ -69,39 +65,47 @@ const addBooking = () => {
   border-radius: 12px;
   background: #f0f6fa;
   box-shadow: 0px 2px 12px 0px rgba(51, 51, 51, 0.2);
+
   &-date {
     width: 284px;
   }
+
   &-select {
     width: 100%;
   }
-  &-room{
+
+  &-room {
     display: flex;
     margin-top: 20px;
     gap: 20px;
   }
+
   &-input-2 {
     padding: 16px 18px;
     border-radius: 8px;
     width: 50%;
     border: none;
     background: #FFF;
+
     &:focus {
-        outline: none;
+      outline: none;
     }
   }
+
   &-input-1 {
     margin-top: 12px;
     padding: 16px 18px;
     border-radius: 8px;
     display: inline-block;
-    
+
     border: none;
     background: #FFF;
+
     &:focus {
-        outline: none;
+      outline: none;
     }
   }
+
   button {
     margin: 28px 0 32px 0;
     width: 100%;
@@ -116,6 +120,7 @@ const addBooking = () => {
     cursor: pointer;
     font-weight: 700;
   }
+
   label {
     margin-top: 24px;
     display: inline-block;
@@ -123,9 +128,10 @@ const addBooking = () => {
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 150.5%; 
+    line-height: 150.5%;
     letter-spacing: -0.5px;
   }
+
   span {
     margin-top: 32px;
     display: inline-block;
@@ -133,12 +139,11 @@ const addBooking = () => {
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
-    line-height: 137%; 
+    line-height: 137%;
     letter-spacing: -1px;
   }
-  
-  &-body{
+
+  &-body {
     margin: 32px 20px;
   }
-}
-</style>
+}</style>

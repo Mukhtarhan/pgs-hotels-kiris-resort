@@ -41,7 +41,6 @@ const toLeft = () => {
 }
 
 
-
 </script>
 
 <style lang="scss" scoped>
@@ -80,4 +79,4 @@ const toLeft = () => {
         }
     }
 }
-</style>
+</style> 

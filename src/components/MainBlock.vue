@@ -52,6 +52,7 @@ const services = [
 
 <style lang="scss" scoped>
 .main {
+  margin-bottom: 160px;
   &-block {
     max-width: 744px;
     display: flex;
