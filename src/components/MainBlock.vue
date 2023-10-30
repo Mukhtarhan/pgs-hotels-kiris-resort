@@ -2,7 +2,7 @@
     <div class="main-block">
   <div class="main">
     <div class="main-top">
-      <h1>Pgs hotels kiris resort</h1>
+      <h1>Pgs hotels kiris resort </h1>
       <div class="main-top-img">
         <img src="Star.svg" alt="star" />
         <img src="Star.svg" alt="star" />
@@ -16,6 +16,7 @@
     </div>
     <p class="main-address">
       г. Москва, 45412, Мариупольский район улица Культуры, д. 15
+     
     </p>
     <div class="main-services">
       <span 
@@ -25,10 +26,12 @@
     <Gallery />
   </div>
   <div class="main-block-data">
-    <div class="main-block-data-search">
-        <input type="text" placeholder="фен, завтрак, пляж">
-        <img src="Search.png" alt="search">
-    </div>
+    <search class="main-block-data-search">
+      <input type="text" placeholder="фен, завтрак, пляж">
+      <button>
+        <img src="Search.png" alt="search" />
+      </button>
+    </search>
     <BookingRoom />
   </div>
 </div>

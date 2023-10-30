@@ -1,11 +1,11 @@
 <template>
     <Header />
-    <div class="container">
+    <main class="container">
       <MainBlock />
       <Advantages />
       <AboutHotel />
       <Contacts />
-    </div>
+    </main>
     <Footer />
   </template>
   
@@ -13,8 +13,8 @@
   import Contacts from '@/components/Contacts.vue';
   import AboutHotel from '@/components/AboutHotel.vue';
   import Advantages from '@/components/Advantages.vue';
+  import MainBlock from '../components/MainBlock.vue';
   import Header from '../components/Header.vue';
   import Footer from '../components/Footer.vue';
-  import MainBlock from '../components/MainBlock.vue';
   </script>
  

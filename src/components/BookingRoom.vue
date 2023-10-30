@@ -6,6 +6,7 @@
 
       <label>Даты въезда и выезда</label>
       <input type="date" class="booking-date booking-input-1" />
+      <input type="date" class="booking-date booking-input-1" />
 
       <label>Отдыхающие</label>
       <select class="booking-input-1 booking-select">

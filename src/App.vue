@@ -1,7 +1,11 @@
 <template>
-  <div>
+  <header />
+
+  <main>
     <router-view />
-  </div>
+  </main>
+
+  <footer />
 </template>
   
 
@@ -10,5 +14,5 @@
 </script>
 
 <style lang="scss">
-@import '../src/assets/style/global.scss'
+@import '../src/assets/style/global.scss';
 </style>

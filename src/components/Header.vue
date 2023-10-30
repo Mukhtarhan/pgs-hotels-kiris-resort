@@ -1,14 +1,16 @@
 <template>
-  <header>
-    <div class="header">
+  <header class="header">
+    <div class="header-content container">
       <img src="logo.png" alt="logo" />
+    
       <div class="header-menu">
         <router-link
           class="header-menu-link"
-          :to="item.path"
           v-for="item in menu"
           :key="item.name"
-          >{{ item.name }}
+          :to="item.path"
+        >
+          {{ item.name }}
         </router-link>
       </div>
       <router-link class="header-sign" to="">Войти</router-link>
@@ -20,35 +22,36 @@
 const menu = [
   {
     name: "Туры",
-    path: "/tour",
+    path: "#tour",
   },
   {
     name: "Идеи",
-    path: "/idea",
+    path: "#idea",
   },
   {
     name: "О нас",
-    path: "/about",
+    path: "#about",
   },
   {
     name: "Помощь",
-    path: "/help",
+    path: "#help",
   },
 ];
 </script>
 
 <style lang="scss">
-header {
-  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
-}
+
 .header {
-  max-width: 1128px;
-  margin: auto;
-  display: flex;
-  height: 80px;
-  align-items: center;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
   background: #fff;
-  justify-content: space-between;
+  height: 80px;
+
+  &-content{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
   &-menu {
     &-link {
       text-decoration: none;

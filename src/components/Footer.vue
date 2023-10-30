@@ -18,10 +18,10 @@
           <router-link to="">Расположение</router-link>
           <router-link to="">Фотогаллерея</router-link>
         </div>
-        <div class="footer-contact-btn">
-          <input type="email" placeholder="alisa_aleksandrova@gmail.com" />
+        <form class="footer-contact-btn" @submit.prevent="submitEmail">
+          <input type="email" placeholder="alisa_aleksandrova@gmail.com" required />
           <button>Подписаться</button>
-        </div>
+        </form>
       </div>
       <div class="footer-info">
         <div class="footer-info-1">
@@ -53,12 +53,16 @@
   </footer>
 </template>
 
-<script setup></script>
+<script setup>
+function  submitEmail(value){
+  console.log('submitEmail', value);
+}
+</script>
 
 <style lang="scss" scoped>
 footer {
   background: #333;
-  height: 1028px;
+  // height: 1028px;
 }
 
 .footer {
@@ -101,6 +105,10 @@ footer {
         border: none;
         height: 38px;
         flex-shrink: 0;
+
+        &:focus{
+          outline: none;
+        }
       }
 
       button {
