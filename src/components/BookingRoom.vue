@@ -2,32 +2,38 @@
   <form class="booking">
     <div class="booking-body">
       <span class="booking-price">{{ booking.price }} ₽</span>
-      <br /><br />
+      <br />
 
       <label>Даты въезда и выезда</label>
-      <input type="date" class="booking-date booking-input-1" />
-      <input type="date" class="booking-date booking-input-1" />
+      <input type="date" class="booking-date booking-input-1" v-model="booking.startDate"/>
+      <input type="date" class="booking-date booking-input-1" v-model="booking.endDate"/>
 
       <label>Отдыхающие</label>
-      <select class="booking-input-1 booking-select">
-        <option value="1">1 взрослых</option>
-        <option value="2">2 взрослых</option>
-        <option value="3">3 взрослых</option>
-        <option value="4">4 взрослых</option>
+      <select class="booking-input-1 booking-select" v-model="booking.numAdult">
+        <option
+            v-for="num in 4"
+            :key="num"
+            :value="num">
+            {{ num }} взрослых</option> 
       </select>
       <div class="booking-room">
         <select class="booking-input-2" v-model="booking.numChild">
           <option value="0">без детей</option>
-          <option value="1">1 детей</option>
-          <option value="2">2 детей</option>
-          <option value="3">3 детей</option>
-          <option value="4">4 детей</option>
+          <option
+            v-for="num in 4"
+            :key="num"
+            :value="num">
+            {{ num }} детей</option> 
         </select>
         <select class="booking-input-2" v-model="booking.numRooms">
-          <option value="1">1 номер</option>
-          <option value="2">2 номер</option>
+          <option
+          v-for="num in 4"
+          :key="num"
+          :value="num">
+          {{ num }} номер</option> 
         </select>
       </div>
+      
       <div @click="addBooking">
         <button>Забронировать</button>
       </div>
@@ -45,7 +51,7 @@ const booking = ref(
     numChild: 0,
     startDate: '',
     endDate: '',
-    numRooms: 0
+    numRooms: 1
   }
 )
 
@@ -59,7 +65,7 @@ const addBooking = () => {
 
 <style lang="scss" scoped>
 .booking {
-  margin: 162px 0 0 24px;
+  margin-bottom: 24px;
   padding-bottom: 7px;
   max-width: 360px;
   max-height: 528px;
@@ -77,7 +83,7 @@ const addBooking = () => {
 
   &-room {
     display: flex;
-    margin-top: 20px;
+    margin-top: 10px;
     gap: 20px;
   }
 
@@ -98,7 +104,7 @@ const addBooking = () => {
     padding: 16px 18px;
     border-radius: 8px;
     display: inline-block;
-
+    width: 100%;
     border: none;
     background: #FFF;
 
@@ -134,7 +140,6 @@ const addBooking = () => {
   }
 
   span {
-    margin-top: 32px;
     display: inline-block;
     font-family: Ubuntu;
     font-size: 32px;
