@@ -2,7 +2,7 @@
   <footer>
     <div class="footer">
       <div class="footer-contact">
-        <img src="logo.png" alt="logo" width="205" height="48" />
+        <img :src="Logo" alt="logo" width="205" height="48" />
         <div class="footer-contact-menu">
           <router-link to="">Акции отеля</router-link>
           <router-link to="">Блог</router-link>
@@ -54,6 +54,7 @@
 </template>
 
 <script setup>
+import Logo from '@/assets/img/logo.png'
 function  submitEmail(value){
   console.log('submitEmail', value);
 }
