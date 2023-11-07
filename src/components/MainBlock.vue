@@ -2,18 +2,21 @@
   <div class="main-block">
     <div class="main-bottom">
       <div class="main-top">
-        <h1>Pgs hotels kiris resort</h1>
-        <div class="main-top-img">
-          <img v-for="index in 5" :key="index" src="Star.svg " alt="star" />
+        <div class="main-top-left">
+          <h1>Pgs hotels kiris resort</h1>
+          <div class="main-top-img">
+            <img v-for="index in 5" :key="index" :src="Star" alt="star" />
+          </div>
+          <div class="main-top-signs">
+            <img :src="Heart" alt="heart" />
+            <img :src="upSign" alt="sign" />
+          </div>
         </div>
-        <div class="main-top-signs">
-          <img src="heart.svg" alt="heart" />
-          <img src="upSign.svg" alt="sign" />
-        </div>
+        
         <search class="main-block-data-search">
           <input type="text" placeholder="фен, завтрак, пляж" />
           <button>
-            <img src="Search.png" alt="search" />
+            <img src="../assets/img/Search.png" alt="search" />
           </button>
         </search>
       </div>
@@ -34,6 +37,11 @@
 <script setup>
 import BookingRoom from "./BookingRoom.vue";
 import Gallery from "./Gallery.vue";
+import Star from '@/assets/img/Star.svg';
+import Heart from '@/assets/img/heart.svg';
+import upSign from '@/assets/img/upSign.svg';
+
+
 
 const services = [
   "трансфер от/до аэропорта",
@@ -121,6 +129,11 @@ const services = [
     display: flex;
     align-items: center;
     justify-content: space-between;
+    &-left {
+      width: 744px;
+      display: flex;
+      justify-content: space-between;
+    }
     h1 {
       font-family: Ubuntu;
       font-size: 48px;

@@ -11,38 +11,46 @@
 </template>
 
 <script setup>
+import Icon1 from '@/assets/img/icon01.png'
+import Icon2 from '@/assets/img/icon02.png'
+import Icon3 from '@/assets/img/icon03.png'
+import Icon4 from '@/assets/img/icon04.png'
+import Icon5 from '@/assets/img/icon05.png'
+import Icon6 from '@/assets/img/icon06.png'
+import Icon7 from '@/assets/img/icon07.png'
+import Icon8 from '@/assets/img/icon08.png'
 
 const advantages = [
     {
-        img: 'icon01.png',
+        img: Icon1,
         description: 'Для граждан РФ виза не требуется'
     },
     {
-        img: 'icon02.png',
+        img: Icon2,
         description: 'Аэропорт	Antalya — 65 км'
     },
     {
-        img: 'icon03.png',
+        img: Icon3,
         description: 'Путь к пляжу: через территорию отеля'
     },
     {
-        img: 'icon04.png',
+        img: Icon4,
         description: 'Различные развлечения на любой вкус'
     },
     {
-        img: 'icon05.png',
+        img: Icon5,
         description: 'Бесплатный Wi-Fi в номере'
     },
     {
-        img: 'icon06.png',
+        img: Icon6,
         description: 'Питание в отеле'
     },
     {
-        img: 'icon07.png',
+        img: Icon7,
         description: 'Уютный первокласный трансфер'
     },
     {
-        img: 'icon08.png',
+        img: Icon8,
         description: 'Бассейн'
     },
 ]

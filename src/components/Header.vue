@@ -1,8 +1,7 @@
 <template>
   <header class="header">
     <div class="header-content container">
-      <img src="logo.png" alt="logo" />
-    
+      <img :src="Logo" alt="logo" />
       <div class="header-menu">
         <router-link
           class="header-menu-link"
@@ -19,6 +18,7 @@
 </template>
 
 <script setup>
+import Logo from '@/assets/img/logo.png'
 const menu = [
   {
     name: "Туры",
