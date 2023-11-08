@@ -47,7 +47,7 @@ import { ref } from "vue";
 const booking = ref(
   {
     price: 0,
-    numAdult: 0,
+    numAdult: 1,
     numChild: 0,
     startDate: '',
     endDate: '',

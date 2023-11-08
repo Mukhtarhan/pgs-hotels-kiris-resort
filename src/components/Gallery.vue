@@ -10,10 +10,15 @@
         @click="toLeft" > {{ sign }} </span>
     </div>
     <div class="gallery-sub">
-        <img :src="album[1]" alt="" width="168" height="92" @click="pickUpImage(1)">
-        <img :src="album[2]" alt="" width="168" height="92" @click="pickUpImage(2)">
-        <img :src="album[3]" alt="" width="168" height="92" @click="pickUpImage(3)">
-        <img :src="album[4]" alt="" width="168" height="92" @click="pickUpImage(4)">
+        <img 
+        v-for="index in (1, 4)"
+        :key="index"
+        :src="album[index]" 
+        alt="room" 
+        width="168" 
+        height="92" 
+        @click="pickUpImage(index)"
+        >
     </div>
   </div>
 </template>
