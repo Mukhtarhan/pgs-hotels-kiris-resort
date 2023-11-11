@@ -1,6 +1,6 @@
 <template>
 <div class="card-service" v-if="contentPosition === 'left'">
-    <div class="crad-serviece-content">
+    <div class="card-service-content">
         <h3>{{ title }}</h3>
         <span>{{ content }}</span>
     </div>
@@ -16,7 +16,7 @@
     :alt="title" 
     width="456" 
     height="340">
-    <div class="crad-serviece-content">
+    <div class="card-service-content">
         <h3>{{ title }}</h3>
         <span>{{ content }}</span>
     </div>
@@ -59,6 +59,7 @@ const props = defineProps({
             font-weight: 700;
             line-height: 134%; 
             letter-spacing: -1px;
+            margin-bottom: 15px;
         }
         & span {
             font-family: Open Sans;
