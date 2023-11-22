@@ -50,12 +50,13 @@ const toLeft = () => {
     }
     album.value[0] = img_1
 }
-
-const pickUpImage = (index) => {
-    const temp = album.value[index]
-    album.value[index] = album.value[0]
+const pickUpImage = (ind) => {
+    const temp = album.value[ind]
+    album.value[ind] = album.value[0]
     album.value[0] = temp
 }
+
+
 
 
 </script>
@@ -70,7 +71,7 @@ const pickUpImage = (index) => {
             cursor: pointer;
             border-radius: 8px;
             &:hover {
-                opacity: 0.7;
+                opacity: 0.8;
             }
         }
        
