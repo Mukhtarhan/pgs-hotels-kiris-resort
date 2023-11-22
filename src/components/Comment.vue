@@ -17,16 +17,57 @@
             </div>
         </div>
     </div>
+    <div class="comments-tabs">
+        <span 
+        v-for="tab in commentTabs"
+        :key="tab"
+        @click="tab.isTabActive =! tab.isTabActive"
+        :class="{'comments-tabs-active' : tab.isTabActive,
+                 'comments-tabs-passive': !tab.isTabActive
+                }"
+        >{{ tab.name }}</span>
+    </div>
+
 </div>    
 </template>
 
 <script setup>
 import { ref } from "vue";
 
-
-const sortValueList = ['сначала высокие оценки', 'сначала низкие оценки']
 const isOpened = ref(false)
 const sortValue = ref('сначала высокие оценки')
+const sortValueList = ['сначала высокие оценки', 'сначала низкие оценки']
+const commentTabs = ref([
+    {
+        name: 'кухня',
+        isTabActive: false
+    },
+    {
+        name: 'персонал',
+        isTabActive: false
+    },
+    {
+        name: 'расположение',
+        isTabActive: false
+    },
+    {
+        name: 'развлечения',
+        isTabActive: false
+    },
+    {
+        name: 'бассейн',
+        isTabActive: false
+    },
+    {
+        name: 'завтрак',
+        isTabActive: false
+    },
+    {
+        name: 'номер',
+        isTabActive: false
+    },
+])
+
 const changeSortValue = (temp) => {
     sortValue.value = temp
     isOpened.value = false
@@ -36,10 +77,36 @@ const changeSortValue = (temp) => {
 
 <style lang="scss" scoped>
 .comments {
+    h2 {
+        margin-bottom: 29px;
+        font-family: Ubuntu;
+        font-size: 32px;
+    }
+    &-tabs {
+        margin-bottom: 28px;
+        &-active {
+            background: #fff;
+            border: 1px solid #DEE6EC;
+        }
+        &-passive {
+            background: #f0f6fa;
+        }
+        span {
+            margin-right: 8px;
+            padding: 1px 8px 3px 8px;
+            gap: 10px;
+            border-radius: 4px;
+            font-family: Open Sans;
+            font-size: 16px;
+            cursor: pointer;
+            display: inline-block;
+        }
+    }
     &-sort {
         max-width: max-content;
         font-family: Open Sans;
         font-size: 16px;
+        margin-bottom: 12px;
         &-list {
             padding-top: 15px;
             background: #f0f6fa;
@@ -60,7 +127,6 @@ const changeSortValue = (temp) => {
             font-size: 16px;
             background: #f0f6fa;
         }
-       
     }
 }
 </style>
