@@ -9,7 +9,10 @@ const router = createRouter({
             name: 'Index',
             component: Index
         }
-    ]
+    ],
+    scrollBehavior(to, from, savedPosition) {
+        return { el: to.hash, top: 100, behavior: 'smooth' }
+    }
 })
 
 export default router;
