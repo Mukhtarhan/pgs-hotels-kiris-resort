@@ -22,16 +22,15 @@
         v-for="tab in commentTabs"
         :key="tab"
         @click="tab.isTabActive =! tab.isTabActive"
-        :class="{'comments-tabs-active' : tab.isTabActive,
-                 'comments-tabs-passive': !tab.isTabActive
-                }"
+        :class="`${tab.isTabActive ? 'comments-tabs-active' : 'comments-tabs-passive'}`"
         >{{ tab.name }}</span>
     </div>
-
+    <CommentList />
 </div>    
 </template>
 
 <script setup>
+import CommentList from '@/components/CommentList.vue'
 import { ref } from "vue";
 
 const isOpened = ref(false)
@@ -108,12 +107,13 @@ const changeSortValue = (temp) => {
         font-size: 16px;
         margin-bottom: 12px;
         &-list {
-            padding-top: 15px;
+            padding-top: 10px;
             background: #f0f6fa;
             display: grid;
             &-item {
                 padding: 1px 8px 3px 8px;
                 cursor: pointer;
+                font-size: 14px;
             }
         }
         button {

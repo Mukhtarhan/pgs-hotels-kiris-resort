@@ -14,7 +14,7 @@
           <router-link to="">Пирсы</router-link>
         </div>
         <div class="footer-contact-menu">
-          <router-link to="">Контакты</router-link>
+          <router-link to="#contacts">Контакты</router-link>
           <router-link to="">Расположение</router-link>
           <router-link to="">Фотогаллерея</router-link>
         </div>
@@ -38,7 +38,7 @@
           </p>
         </div>
         <div class="footer-info-2">
-          <img src="Group.svg" alt="" width="12" />
+          <img src="../assets/img/Group.svg" alt="" width="12" />
           <p>
             Все права защищены<br />
             <br />
