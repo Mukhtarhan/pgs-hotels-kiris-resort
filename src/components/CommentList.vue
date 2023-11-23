@@ -11,6 +11,7 @@
     :score-comment="comment.scoreComment"
     />
     <button @click="showAllComments" class="btn" v-if="showCommentButton">Посмотреть все отзывы</button>
+    <button @click="hideComments" class="btn" v-else>Cкрыть отзывы</button>
   </div>
   
 </template>
@@ -101,6 +102,11 @@ const displayedComments = ref(comments.slice(0, 3))
 function showAllComments() {
     showCommentButton.value = false
     displayedComments.value = comments
+}
+
+function hideComments() {
+    showCommentButton.value = true
+    displayedComments.value = comments.slice(0, 3)
 }
 </script>
 
