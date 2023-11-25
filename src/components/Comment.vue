@@ -100,7 +100,7 @@ const comments = [
     img: ProfileImage,
     type: 'location',
     description: '2 стандартный 2-местных номер',
-    score: 10,
+    score: 9,
     scoreComment: 'отлично',
     date: 'Ноябрь 2020г',
     advantages:
@@ -112,7 +112,7 @@ const comments = [
     img: ProfileImage,
     type: 'location',
     description: '3 стандартный 2-местных номер',
-    score: 10,
+    score: 8,
     scoreComment: 'отлично',
     date: 'Ноябрь 2020г',
     advantages:
@@ -124,7 +124,7 @@ const comments = [
     img: ProfileImage,
     type: 'kitchen',
     description: '4 стандартный 2-местных номер',
-    score: 10,
+    score: 7,
     scoreComment: 'отлично',
     date: 'Ноябрь 2020г',
     advantages:
@@ -136,7 +136,7 @@ const comments = [
     img: ProfileImage,
     type: 'kitchen',
     description: '5 стандартный 2-местных номер',
-    score: 10,
+    score: 6,
     scoreComment: 'отлично',
     date: 'Ноябрь 2020г',
     advantages:
@@ -148,7 +148,7 @@ const comments = [
     img: ProfileImage,
     type: 'kitchen',
     description: '6 стандартный 2-местных номер',
-    score: 10,
+    score: 5,
     scoreComment: 'отлично',
     date: 'Ноябрь 2020г',
     advantages:
@@ -160,7 +160,7 @@ const comments = [
     img: ProfileImage,
     type: 'kitchen',
     description: '7 стандартный 2-местных номер',
-    score: 10,
+    score: 4,
     scoreComment: 'отлично',
     date: 'Ноябрь 2020г',
     advantages:
@@ -172,7 +172,7 @@ const comments = [
     img: ProfileImage,
     type: 'kitchen',
     description: '8 стандартный 2-местных номер',
-    score: 10,
+    score: 3,
     scoreComment: 'отлично',
     date: 'Ноябрь 2020г',
     advantages:
@@ -183,11 +183,9 @@ const comments = [
 ];
 
 const computedComments = computed(() => {
-  console.log(
-    'computedComments',
-    comments.filter(comment => comment.type === activeTab.value.value)
-  );
-  return comments.filter(comment => comment.type === activeTab.value.value);
+  let tempComment = comments.filter(comment => comment.type === activeTab.value.value)
+  tempComment = sortValue.value === 'сначала высокие оценки' ? tempComment.sort((a, b) => b.score - a.score) : tempComment.sort((a, b) => a.score - b.score);
+  return tempComment
 });
 </script>
 
@@ -227,6 +225,8 @@ const computedComments = computed(() => {
       padding-top: 10px;
       background: #f0f6fa;
       display: grid;
+      overflow: hidden;
+      transition: grid-template-rows 0.3s ease;
       &-item {
         padding: 1px 8px 3px 8px;
         cursor: pointer;

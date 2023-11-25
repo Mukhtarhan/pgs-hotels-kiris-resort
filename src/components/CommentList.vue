@@ -4,13 +4,6 @@
       v-for="comment in displayedComments"
       :key="comment"
       :comment="comment"
-      :advantages="comment.advantages"
-      :disadvantages="comment.disadvantages"
-      :description="comment.description"
-      :img="comment.img"
-      :score="comment.score"
-      :date="comment.date"
-      :score-comment="comment.scoreComment"
     />
     <button v-if="comments.length > 3" @click="toggle" class="btn">
       {{ showMore ? 'Посмотреть все отзывы' : 'Cкрыть отзывы' }}

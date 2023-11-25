@@ -1,5 +1,5 @@
 <template>
-    <div class="advantages">
+    <div class="advantages" id="idea">
         <h2>Преимущества отеля</h2>
         <div class="advantages-content">
             <div class="advantages-element" v-for="item in advantages" :key="item.img">

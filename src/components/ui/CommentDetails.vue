@@ -2,21 +2,21 @@
   <div class="card-details">
     <div class="card-details-content">
       <div class="card-details-top">
-          <img :src="img" alt="">
+          <img :src="comment.img" alt="">
           <div class="card-details-top__desc">
-            <h2 class="card-details-top-span_1">{{ score + ' ' + scoreComment }}</h2>
-            <span class="card-details-top-span_2">{{ date + ', ' + description }}</span>
+            <h2 class="card-details-top-span_1">{{ comment.score + ' ' + comment.scoreComment }}</h2>
+            <span class="card-details-top-span_2">{{ comment.date + ', ' + comment.description }}</span>
           </div>
       </div>
       <hr>
       <div class="card-details-bottom">
         <div class="card-details-bottom-content">
           <img src="../../assets/img/plus.svg" alt="" width="24" height="24">
-          <p>{{ advantages }}</p>
+          <p>{{ comment.advantages }}</p>
         </div>
         <div class="card-details-bottom-content">
           <img src="../../assets/img/minus.svg" alt="">
-          <p>{{ disadvantages }}</p>
+          <p>{{ comment.disadvantages }}</p>
         </div>
       </div>
     </div>
@@ -25,33 +25,9 @@
 
 <script setup>
 const props = defineProps({
-  img: {
-    type: String,
-    required: true
-  },
-  description: {
-    type: String,
-    required: true
-  },
-  score: {
-    type: Float32Array,
-    required: true
-  },
-  scoreComment: {
-    type: String,
-    required: true
-  },
-  date: {
-    type: String,
-    required: true
-  },
-  advantages: {
-    type: String,
-    required: true
-  },
-  disadvantages: {
-    type: String,
-    required: true
+  comment: {
+    type: Object,
+    default: () => {}
   }
 })
 </script>

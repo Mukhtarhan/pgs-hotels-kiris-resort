@@ -78,8 +78,10 @@ const pickUpImage = (ind) => {
     }
     &-main {
         position: relative;
+        transition: 0.5s easy in out;
         &-img {
             border-radius: 12px;
+            
         }
         span {
             position: absolute;
