@@ -34,7 +34,11 @@
         {{ tab.name }}
       </span>
     </div>
-    <CommentList :comments="computedComments" />
+    <div class="comments-content">
+      <CommentList :comments="computedComments" />
+      <CommentInfoVue />
+    </div>
+    
   </div>
 </template>
 
@@ -42,6 +46,9 @@
 import CommentList from '@/components/CommentList.vue';
 import { ref, computed } from 'vue';
 import ProfileImage from '@/assets/img/profile-1.svg';
+import ProfileImage2 from '@/assets/img/profile-2.svg';
+import ProfileImage3 from '@/assets/img/profile-3.svg';
+import CommentInfoVue from './CommentInfo.vue';
 
 const isOpened = ref(false);
 const sortValue = ref('сначала высокие оценки');
@@ -49,7 +56,7 @@ const sortValueList = ['сначала высокие оценки', 'снача
 const tabs = ref([
   {
     value: 'kitchen',
-    name: 'kitchen',
+    name: 'кухня',
   },
   {
     value: 'personal',
@@ -97,7 +104,7 @@ const comments = [
       'Такси от гостиницы очень дорого, пришлось брать другого перевозчика.',
   },
   {
-    img: ProfileImage,
+    img: ProfileImage2,
     type: 'location',
     description: '2 стандартный 2-местных номер',
     score: 9,
@@ -109,7 +116,7 @@ const comments = [
       'Такси от гостиницы очень дорого, пришлось брать другого перевозчика.',
   },
   {
-    img: ProfileImage,
+    img: ProfileImage3,
     type: 'location',
     description: '3 стандартный 2-местных номер',
     score: 8,
@@ -133,7 +140,7 @@ const comments = [
       'Такси от гостиницы очень дорого, пришлось брать другого перевозчика.',
   },
   {
-    img: ProfileImage,
+    img: ProfileImage2,
     type: 'kitchen',
     description: '5 стандартный 2-местных номер',
     score: 6,
@@ -145,7 +152,7 @@ const comments = [
       'Такси от гостиницы очень дорого, пришлось брать другого перевозчика.',
   },
   {
-    img: ProfileImage,
+    img: ProfileImage3,
     type: 'kitchen',
     description: '6 стандартный 2-местных номер',
     score: 5,
@@ -158,7 +165,7 @@ const comments = [
   },
   {
     img: ProfileImage,
-    type: 'kitchen',
+    type: 'breakfast',
     description: '7 стандартный 2-местных номер',
     score: 4,
     scoreComment: 'отлично',
@@ -184,13 +191,19 @@ const comments = [
 
 const computedComments = computed(() => {
   let tempComment = comments.filter(comment => comment.type === activeTab.value.value)
-  tempComment = sortValue.value === 'сначала высокие оценки' ? tempComment.sort((a, b) => b.score - a.score) : tempComment.sort((a, b) => a.score - b.score);
+  tempComment = sortValue.value === 'сначала высокие оценки' 
+    ? tempComment.sort((a, b) => b.score - a.score) 
+    : tempComment.sort((a, b) => a.score - b.score)
   return tempComment
 });
 </script>
 
 <style lang="scss" scoped>
 .comments {
+  &-content {
+    display: flex;
+    gap: 24px;
+  }
   h2 {
     margin-bottom: 29px;
     font-family: Ubuntu;
