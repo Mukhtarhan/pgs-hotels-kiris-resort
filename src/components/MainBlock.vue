@@ -12,7 +12,6 @@
             <img :src="upSign" alt="sign" />
           </div>
         </div>
-        
         <search class="main-block-data-search">
           <input type="text" placeholder="фен, завтрак, пляж" />
           <button>
@@ -35,22 +34,20 @@
 </template>
 
 <script setup>
-import BookingRoom from "./BookingRoom.vue";
-import Gallery from "./Gallery.vue";
+import BookingRoom from './BookingRoom.vue';
+import Gallery from './Gallery.vue';
 import Star from '@/assets/img/Star.svg';
 import Heart from '@/assets/img/heart.svg';
 import upSign from '@/assets/img/upSign.svg';
 
-
-
 const services = [
-  "трансфер от/до аэропорта",
-  "wi-fi",
-  "завтрак включен",
-  "первая линия",
-  "хит продаж",
-  "парковка",
-  "хороший вариант для семьи",
+  'трансфер от/до аэропорта',
+  'wi-fi',
+  'завтрак включен',
+  'первая линия',
+  'хит продаж',
+  'парковка',
+  'хороший вариант для семьи',
 ];
 </script>
 
@@ -67,7 +64,7 @@ const services = [
       &-search {
         margin: 24px 0 0 120px;
         width: 264px;
-        height: 44px;;
+        height: 44px;
         padding: 8px 16px;
         display: flex;
         justify-content: center;
@@ -80,7 +77,6 @@ const services = [
           border: none;
           &:focus {
             outline: none;
-            
           }
           font-family: Open Sans;
           background: #f5f5f5;

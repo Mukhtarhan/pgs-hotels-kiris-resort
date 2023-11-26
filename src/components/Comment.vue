@@ -38,7 +38,6 @@
       <CommentList :comments="computedComments" />
       <CommentInfoVue />
     </div>
-    
   </div>
 </template>
 
@@ -79,7 +78,7 @@ const tabs = ref([
     name: 'завтрак',
   },
   {
-    value: 'rooom',
+    value: 'room',
     name: 'номер',
   },
 ]);
@@ -176,7 +175,7 @@ const comments = [
       'Такси от гостиницы очень дорого, пришлось брать другого перевозчика.',
   },
   {
-    img: ProfileImage,
+    img: ProfileImage3,
     type: 'kitchen',
     description: '8 стандартный 2-местных номер',
     score: 3,
@@ -187,14 +186,65 @@ const comments = [
     disadvantages:
       'Такси от гостиницы очень дорого, пришлось брать другого перевозчика.',
   },
+  {
+    img: ProfileImage,
+    type: 'pool',
+    description: '8 стандартный 2-местных номер',
+    score: 3,
+    scoreComment: 'отлично',
+    date: 'Ноябрь 2020г',
+    advantages:
+      'Дружелюбный и компетентный персонал. Хорошая организация заезда и выезда. Услуги такси и хранения багажа при позднем выезде. Хорошая кухня, приятная обстановка в ресторане. Большое спасибо.',
+    disadvantages:
+      'Такси от гостиницы очень дорого, пришлось брать другого перевозчика.',
+  },
+  {
+    img: ProfileImage2,
+    type: 'room',
+    description: '8 стандартный 2-местных номер',
+    score: 3,
+    scoreComment: 'отлично',
+    date: 'Ноябрь 2020г',
+    advantages:
+      'Дружелюбный и компетентный персонал. Хорошая организация заезда и выезда. Услуги такси и хранения багажа при позднем выезде. Хорошая кухня, приятная обстановка в ресторане. Большое спасибо.',
+    disadvantages:
+      'Такси от гостиницы очень дорого, пришлось брать другого перевозчика.',
+  },
+  {
+    img: ProfileImage2,
+    type: 'entertainment',
+    description: '8 стандартный 2-местных номер',
+    score: 3,
+    scoreComment: 'отлично',
+    date: 'Ноябрь 2020г',
+    advantages:
+      'Дружелюбный и компетентный персонал. Хорошая организация заезда и выезда. Услуги такси и хранения багажа при позднем выезде. Хорошая кухня, приятная обстановка в ресторане. Большое спасибо.',
+    disadvantages:
+      'Такси от гостиницы очень дорого, пришлось брать другого перевозчика.',
+  },
+  {
+    img: ProfileImage,
+    type: 'personal',
+    description: '8 стандартный 2-местных номер',
+    score: 5,
+    scoreComment: 'отлично',
+    date: 'Ноябрь 2020г',
+    advantages:
+      'Дружелюбный и компетентный персонал. Хорошая организация заезда и выезда. Услуги такси и хранения багажа при позднем выезде. Хорошая кухня, приятная обстановка в ресторане. Большое спасибо.',
+    disadvantages:
+      'Такси от гостиницы очень дорого, пришлось брать другого перевозчика.',
+  },
 ];
 
 const computedComments = computed(() => {
-  let tempComment = comments.filter(comment => comment.type === activeTab.value.value)
-  tempComment = sortValue.value === 'сначала высокие оценки' 
-    ? tempComment.sort((a, b) => b.score - a.score) 
-    : tempComment.sort((a, b) => a.score - b.score)
-  return tempComment
+  let tempComment = comments.filter(
+    comment => comment.type === activeTab.value.value
+  );
+  tempComment =
+    sortValue.value === 'сначала высокие оценки'
+      ? tempComment.sort((a, b) => b.score - a.score)
+      : tempComment.sort((a, b) => a.score - b.score);
+  return tempComment;
 });
 </script>
 

@@ -18,35 +18,34 @@
 </template>
 
 <script setup>
-import Logo from '@/assets/img/logo.png'
+import Logo from '@/assets/img/logo.png';
 const menu = [
   {
-    name: "Туры",
-    path: "#tour",
+    name: 'Туры',
+    path: '#tour',
   },
   {
-    name: "Идеи",
-    path: "#idea",
+    name: 'Идеи',
+    path: '#idea',
   },
   {
-    name: "О нас",
-    path: "#about",
+    name: 'О нас',
+    path: '#about',
   },
   {
-    name: "Помощь",
-    path: "#help",
+    name: 'Помощь',
+    path: '#help',
   },
 ];
 </script>
 
 <style lang="scss">
-
 .header {
   box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
   background: #fff;
   height: 80px;
 
-  &-content{
+  &-content {
     height: 100%;
     display: flex;
     align-items: center;

@@ -19,7 +19,11 @@
           <router-link to="">Фотогаллерея</router-link>
         </div>
         <form class="footer-contact-btn" @submit.prevent="submitEmail">
-          <input type="email" placeholder="alisa_aleksandrova@gmail.com" required />
+          <input
+            type="email"
+            placeholder="alisa_aleksandrova@gmail.com"
+            required
+          />
           <button>Подписаться</button>
         </form>
       </div>
@@ -54,8 +58,8 @@
 </template>
 
 <script setup>
-import Logo from '@/assets/img/logo.png'
-function  submitEmail(value){
+import Logo from '@/assets/img/logo.png';
+function submitEmail(value) {
   console.log('submitEmail', value);
 }
 </script>
@@ -107,7 +111,7 @@ footer {
         height: 38px;
         flex-shrink: 0;
 
-        &:focus{
+        &:focus {
           outline: none;
         }
       }
