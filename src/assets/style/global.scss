@@ -24,11 +24,17 @@ a:hover {
 .btn {
   padding: 13px 32px;
   border-radius: 12px;
-  background: #3C3E44;
+  background: #3c3e44;
   font-family: Ubuntu;
   font-size: 16px;
   font-weight: 700;
   color: #fff;
   border: none;
   cursor: pointer;
+}
+
+.sliders {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
 }

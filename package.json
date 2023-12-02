@@ -8,7 +8,9 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
+    "swiper": "^11.0.5",
     "vue": "^3.2.13",
+    "vue-ai-carousel": "^1.1.1",
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
