@@ -1,5 +1,5 @@
 <template>
-  <div class="about-hotel" id="about">
+  <div class="about-hotel" id="tour">
     <CardServices
       v-for="item in about"
       :key="item.title"

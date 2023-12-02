@@ -5,8 +5,8 @@
         <img :src="Logo" alt="logo" width="205" height="48" />
         <div class="footer-contact-menu">
           <router-link to="">Акции отеля</router-link>
-          <router-link to="">Блог</router-link>
-          <router-link to="">Все новости</router-link>
+          <router-link to="#blog">Блог</router-link>
+          <router-link to="#blog">Все новости</router-link>
         </div>
         <div class="footer-contact-menu">
           <router-link to="">Отзывы</router-link>
@@ -142,6 +142,7 @@ footer {
       p {
         font-family: Open Sans;
         font-size: 14px;
+        margin-top: 14px;
       }
     }
 

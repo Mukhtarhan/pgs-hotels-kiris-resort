@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class="content" id="blog">
     <h2>Вам может быть интересно</h2>
     <Swiper
       class="hotels"
